@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>home</title>
+<style>
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<header>
+
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="https://cdn.videvo.net/videvo_files/video/free/2012-07/small_watermarked/FreeSmokeYoutube_preview.webm" type="video/mp4">
+    </video>
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <main class="container text-center">
+                <h1 class="py-3 text-info">This is my Website.</h1>
+                <div class="bg-dark text-light p-5 rounded px-3">
+                    <p class="lead">Most of us divide-up our life experience into those we like and those we don’t. But
+                        the Taoist
+                        masters teach us
+                        to look deeper. In the flow of yin and yang everything is constantly changing into its opposite.
+                        The more we
+                        live with awareness of the inevitable tides of the Tao, the more it seems superficial and
+                        misguided to
+                        reject
+                        some experiences and try to hold onto others.</p>
+                </div>
+                <h5 class="blockquote text-secondary py-5"> Don't mind that paragraph</h5>
+            </main>
+        </div>
+        <p class="lead text-center">
+                <a href="/index" class="btn btn-lg btn-outline-info fw-bold text-dark">go on then</a>
+            </p>
+    </div>
+</header>
+
+
+{% endblock %}
