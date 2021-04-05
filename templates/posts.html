@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>posts</title>
+<style>
+    h1.intro {
+               padding: 40px;
+             }
+    form
+
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+<h1 class="intro text-light text-center">Express your ideas!</h1>
+<hr>
+<hr>
+<h2 class="display-4 text-info text-center">create new blogpost:</h2>
+<div class="container text-light">
+    <form action='/posts' method='POST'>
+        <label for="title">Title: </label>
+        <input type="text" name="title" id="title" class="form-control">
+        <br>
+        <label for="author">Author: </label>
+        <input type="text" name="author" id="author" class="form-control">
+        <br>
+        <label for="content">content: </label>
+        <textarea type="text" name="content" class="form-control" id="content" rows="3"></textarea>
+        <br>
+        <input type="submit" value="Post" class="btn btn-outline-success">
+    </form>
+    <hr>
+    <hr>
+    {% for post in posts %}
+    <div class="container-fluid bg-light text-dark">
+        <small class="text-muted">{{post}}</small>
+        <h2 class="display-6">{{post.title}}</h2>
+        <p>{{post.content}}</p>
+        <small> by {{post.author}}</small>
+        <br>
+        <br>
+        <a class="btn btn-outline-danger" href="/posts/delete/{{post.id}}">delete</a>
+        <a class="btn btn-outline-primary" href="/posts/edit/{{post.id}}">edit</a>
+        <hr>
+    </div>
+    {% endfor %}
+     <a class="btn btn-outline-info" href="/index">homepage</a>
+
+</div>
+
+{%  endblock %}
