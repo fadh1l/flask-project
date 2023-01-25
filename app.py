@@ -1,10 +1,20 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import os
 
+#file_path = os.path.abspath(os.getcwd())+"/instance/posts.db"
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
+
+#connecting the db and flask app
+project_dir = os.path.dirname(os.path.abspath(__file__))
+database_file = "sqlite:///{}".format(os.path.join(project_dir, "posts.db"))
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./posts.db'
+app.config["SQLALCHEMY_DATABASE_URI"] = database_file
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
+
+
 
 
 class BlogPost(db.Model):
@@ -15,7 +25,7 @@ class BlogPost(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     def __repr__(self):
-        return 'Blog post ' + str(self.id)
+        return "<Title: {}>".format(self.title)
 
 
 @app.route('/')
