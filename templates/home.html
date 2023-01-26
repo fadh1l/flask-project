@@ -1,64 +1,56 @@
-{% extends "base.html" %}
-
-{% block head %}
+{% extends "base.html" %} {% block head %}
 <title>home</title>
 <style>
-
-header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-}
-
-header .container {
-  position: relative;
-  z-index: 2;
-}
-
-
-
+    /* header video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    } */
+    
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    
+    header .container {
+        position: relative;
+        z-index: 2;
+    }
 </style>
 
-{% endblock %}
-
-{% block body %}
+{% endblock %} {% block body %}
 
 <header>
 
     <div class="overlay"></div>
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="https://cdn.videvo.net/videvo_files/video/free/2012-07/small_watermarked/FreeSmokeYoutube_preview.webm" type="video/mp4">
-    </video>
+    <video autoplay muted loop id="myVideo">
+  <source src="https://joy1.videvo.net/videvo_files/video/free/2021-04/large_watermarked/210329_06A_Bali_4k_004_preview.mp4" type="video/mp4">
+</video>
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
             <main class="container text-center">
                 <h1 class="py-3 text-info">This is my Website.</h1>
                 <div class="bg-dark text-light p-5 rounded px-3">
-                    <p class="lead">Most of us divide-up our life experience into those we like and those we don’t. But
-                        the Taoist
-                        masters teach us
-                        to look deeper. In the flow of yin and yang everything is constantly changing into its opposite.
-                        The more we
-                        live with awareness of the inevitable tides of the Tao, the more it seems superficial and
-                        misguided to
-                        reject
-                        some experiences and try to hold onto others.</p>
-                </div>
+                    <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia illum nostrum ipsum iste aperiam culpa beatae voluptatum aut impedit autem, consectetur assumenda animi sint tempore? Vel, saepe eveniet maiores deserunt repellendus quam
+                        suscipit maxime ratione dolor provident nisi voluptatibus quibusdam iusto delectus voluptatem obcaecati earum sint itaque. Odit, facere debitis.</div>
                 <h5 class="blockquote text-secondary py-5"> Don't mind that paragraph</h5>
             </main>
         </div>
         <p class="lead text-center">
-                <a href="/index" class="btn btn-lg btn-outline-info fw-bold text-dark">go on then</a>
-            </p>
+            <a href="/index" class="btn btn-lg btn-outline-info fw-bold text-dark">go on then</a>
+        </p>
     </div>
 </header>
 
